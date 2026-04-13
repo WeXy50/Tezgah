@@ -197,12 +197,27 @@ body {
 }
 
 .branch-card {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
     background: var(--surface-color);
-    transition: transform var(--transition);
+    transition: all var(--transition);
+    border: 2px solid transparent;
+}
+
+.branch-card.inactive-branch {
+    opacity: 0.4;
+    filter: grayscale(100%);
+}
+
+.branch-card.active-branch {
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+    transform: scale(1.03);
+    opacity: 1;
+    filter: grayscale(0%);
 }
 
 .branch-card:active {
@@ -221,48 +236,44 @@ body {
     object-fit: cover;
 }
 
-.branch-img-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%);
-}
-
 .branch-info {
-    position: absolute;
-    bottom: 0; left: 0; width: 100%;
     padding: 20px;
-    z-index: 2;
+    text-align: center;
+    background: var(--surface-color);
 }
 
 .branch-info h3 {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    color: #fff;
 }
 
-.branch-info p {
+.address-text {
     font-size: 0.85rem;
-    color: #ccc;
+    color: var(--text-secondary);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
+    margin-bottom: 12px;
 }
 
-.you-are-here {
-    position: absolute;
-    top: 15px; right: 15px;
+.you-are-here-bottom {
+    display: inline-block;
     background: var(--gold);
     color: #000;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 800;
-    padding: 6px 12px;
+    padding: 8px 16px;
     border-radius: 20px;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-    animation: bounceIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
 }
 
 /* Menu Page */

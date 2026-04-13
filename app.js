@@ -20,30 +20,28 @@ document.addEventListener('DOMContentLoaded', () => {
         
         branches.forEach((branch, index) => {
             const isHere = branch.id === scannedBranchId;
+            const hasScanned = !!scannedBranchId;
+            
             const card = document.createElement('div');
-            card.className = 'branch-card';
+            card.className = `branch-card ${hasScanned ? (isHere ? 'active-branch' : 'inactive-branch') : ''}`;
             card.style.animationDelay = `${index * 0.15}s`;
             
             const hereBadge = isHere 
-                ? `<div class="you-are-here">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    ŞUAN BURADASINIZ
-                   </div>`
+                ? `<div class="you-are-here-bottom">📍 ŞU AN BURADASINIZ</div>`
                 : '';
 
             card.innerHTML = `
-                ${hereBadge}
                 <div class="branch-img-wrapper">
                     <!-- GitHub Pages veya lokalde resmin yüklenememe ihtimaline karşı fallback fotoğraf -->
                     <img src="${branch.image}" alt="${branch.name}" onerror="this.src='https://images.unsplash.com/photo-1555507036-ab1d4075c3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                    <div class="branch-img-overlay"></div>
                 </div>
                 <div class="branch-info">
                     <h3>${branch.name}</h3>
-                    <p>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <p class="address-text">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                         ${branch.address}
                     </p>
+                    ${hereBadge}
                 </div>
             `;
 
