@@ -3,7 +3,7 @@ export const branches = [
         id: "umraniye",
         name: "Ümraniye Şubesi",
         address: "Atatürk Mah. Alemdağ Cd. Ümraniye",
-        image: "assets/umraniye.jpg",
+        image: "https://images.unsplash.com/photo-1555507036-ab1d4075c3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         categories: ["Börekler", "İçecekler"],
         menu: [
             { category: "Börekler", items: [
@@ -21,7 +21,7 @@ export const branches = [
         id: "samandira",
         name: "Samandıra Şubesi",
         address: "Eyüp Sultan Mah. Merkez Cd. Samandıra",
-        image: "assets/samandira.jpg",
+        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         categories: ["Börekler", "Tatlılar", "İçecekler"],
         menu: [
             { category: "Börekler", items: [
@@ -41,7 +41,7 @@ export const branches = [
         id: "sultanbeyli",
         name: "Sultanbeyli Şubesi",
         address: "Abdurrahmangazi Mah. Fatih Blv.",
-        image: "assets/sultanbeyli.jpg",
+        image: "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         categories: ["Börekler", "İçecekler"],
         menu: [
             { category: "Börekler", items: [
