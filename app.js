@@ -1,7 +1,7 @@
 import { branches } from './data.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
+// DOMContentLoaded wrapper removed for ES Modules
+const urlParams = new URLSearchParams(window.location.search);
     const scannedBranchId = urlParams.get('branch');
 
     const loader = document.getElementById('loader');
@@ -134,4 +134,3 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.app-header').addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-});
